@@ -1,0 +1,46 @@
+DROP TABLE `tbl_editors` IF EXISTS;
+
+--
+-- Table structure for table `tbl_editors`
+--
+
+CREATE TABLE `tbl_editors` (
+  `EDITOR_ID` int(11) NOT NULL COMMENT 'identificator unic al unei edituri',
+  `EDITOR_NAME` varchar(32) COLLATE utf8_unicode_ci NOT NULL COMMENT 'nume editura',
+  `ADDRESS` varchar(128) COLLATE utf8_unicode_ci NOT NULL COMMENT 'adresa sediului editurii',
+  `EDITOR_INFO` text COLLATE utf8_unicode_ci NOT NULL COMMENT 'scurta prezentare a unei edituri'
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci COMMENT='câteva edituri de carte';
+
+--
+-- Creating contents for table `tbl_editors`
+--
+
+INSERT INTO `tbl_editors` (`EDITOR_ID`, `EDITOR_NAME`, `ADDRESS`, `EDITOR_INFO`) VALUES
+(1491000, 'No Name', 'Empty Field', 'Empty Field'),
+(1491001, 'Litera', 'OP 53, CP 212, Sector 4, Bucuresti, România', 'Fondat&#259; în anul 1989 la Chi&#351;in&#259;u, în prezent este una din cele mai apreciate edituri românesti. Peste 4300 de titluri publicate, într-un tiraj total de 48 milioane de exemplare tiparite si peste 400 de eBook-uri. Titluri dion cele mai variate domenii: enciclopedii, atlase, dictionare, carti pentru copii, istorie, limbi straine etc. Colaborari cu edituri de prestigiu din strainatate: Dorling Kindersley, Disney, Penguin, Larousse, National Geographic, Usborne'),
+(1491002, 'Militara', 'Bucuresti, Bdul Elisabeta nr. 24, sector 5, Bucuresti (Palatul Cercului Militar National)', 'Editura Militar&#259; este marca înregistrata a Ministerului Apararii Nationale si este recunoscuta de catre Consiliul National al Cercetarii Stiintifice din Învatamântul Superior (cod CNCSIS 010). A început sa functioneze în anul 1950, publicând lucrari de doctrina, stiinta si arta militara, de istorie si memorialistica, necesare formarii cadrelor militare si ostasilor, mentinerii contactului cu noutatile în domeniul instructiei si al educatiei, al strategiilor si mijloacelor tehnice de aparare, al cultivarii spiritului patriotic.'),
+(1491003, 'Meridiane', 'Bucuresti, Sectorul 1, PIATA PRESEI LIBERE 1E', 'Editura Meridiane este celebra în lumea culturala pentru numeroasele carti de istoria artei si istoria civilizatiei pe care le-a publicat, ale unor autori de mare valoare. Pe lânga activitatea din aceste domenii culturale, editura a mai publicat carti din domeniul artei, atât albume de pictura cât si de tehnica artei, biografii ai unor artisti celebri, atât români, cât si din întreaga lume, monografii si multe alte subiecte de cultura româneasca si internationala, si respectiv de arta.'),
+(1491004, 'Berkeley Books', 'The Berkeley Publishing Group, 200 Madison Avenue, New York, New York 10016', 'Berkley Books a aparut ca si companie independenta in anul 1955. A fost infiintata de catre Charles Byrne si Frederick Klein, fosti angajati ai editurii Avon, cunoscuti pentru marca  \"Chic News Company\". Initial s-a numit Berkley Publishing Co. in 1955. Foarte repede cei doi au identificat un domeniu de nisa in science fiction si astfel au inceput sa publice.<br /> &#206;n 1965 au fost inglobati de editura G.P. Putnam\'s Sons si au fost transformati in ceea ce se numeste <i>paperback publisher</i>. Saptesprezece ani mai t&#226;rziu, in 1982, Putnam a achizitionat compania Grosset & Dunlap and Playboy Press, iar brand-urile <i>Ace</i> &#351;i <i>Playboy</i> au revenit diviziei Berkley. Ceea ce s-a numit <i>The Playboy list</i> a fost in cele din urma absorbit de Berkley, &#238;n vreme ce seriile <i>Jove</i> &#351;i <i>Ace</i> have continued as distinct imprints.<br />Following its publication of Tom Clancy\'s The Hunt for Red October, Berkley Books became increasingly interested in publishing military fiction and technothrillers. The publicity campaigns at military bases were part of the success Dale Brown\'s Flight of the Old Dog.<br />BERKELEY and the \"B\" design are trademarks belonging to Berkeley Publishing Corporation'),
+(1491005, 'Cartea Româneasca', 'Bucuresti, Blvd. Basarabia Nr. 100', 'CARTEA ROMÂNEASCA, cea mai prestigioasa si mai veche editura româneasca, a fost înfiintata în anul 1919 prin fuziunea mai multor edituri si tipografii: Tipografia lui C.I. Rasidescu (urmasa a vechii tipografii a lui C.A. Rosetti), Libraria&amp;Editura \"Ioanitiu si fiii\" din 1858, \"Libraria scoalelor\" din 1891 si Institutul \"Minerva\" din 1898, la initiativa rectorului Universit&#259;&#355;ii Bucuresti Ion Athanasiu si a profesorului universitar Ion Th. Simionescu, fost rector al Universitatii din Iasi, tatal celebrei Sanda Marin. Initiatorii editurii, si-au propus \"crearea unui institut de editura cu scopul tiparirii unei biblioteci ieftine cu continut literar, dar mai ales stiintific pentru raspândirea culturii\". În anul 1948 CARTEA ROMÂNEASCA este desfiintata de regimul comunist. Este reînfiintata în anul 1970 ca editura a Uniunii Scriitorilor din România, sub conducerea scriitorului Marin Preda, având ca scop promovarea scrisului românesc prin publicarea scriitorilor români consacrati si promovarea tinerilor autori.'),
+(1491006, 'Univers', 'Str. Dionisie Lupu Nr. 65, Sector 1, Bucuresti, România, 010458', 'Editura Univers, fondat&#259; în 1969, este una dintre cele mai prestigioase si mai longevive edituri din România, cu o istorie neîntrerupta de patruzeci si noua de ani de activitate, timp în care a publicat atât fictiune, cât si nonfictiune, de la traduceri fundamentale din literatura universala pâna la lucrari de critica si teorie literara, la albume si enciclopedii. Editura Univers a adus în bibliotecile cititorilor mai mult de 7000 de titluri, traducând din 1969 pâna în prezent autori de prima marime ai literaturii universale, ale caror carti au fost publicate pentru prima oara în România sub sigla editurii, în colectiile Clasici ai Literaturii Universale, Romanul Secolului XX, Romanul secolului XXI, Globus, Studii: Gabriel Garcia Marques, J. D. Salinger, John Fowles, Milan Kundera, Michel Foucault, Andrei Makine, Julio Cortazar, George Orwell, Michel Tournier, Ernesto Sabato, Thomas Pynchon, Franz Kafka, Richard Russo, Jostein Gaarder, Boris Vian, Simone de Beauvoir, Roland Barthes...'),
+(1491007, 'pentru Literatura Universala', 'Bucuresti', 'TBD'),
+(1491008, 'Albatros', 'QZT', 'TBD'),
+(1491009, 'Colosseum', 'Bucuresti, Sect.2, Calea Mosilor 113C, Ap.7', 'Tel: 021-614-9528, 021-614-6541'),
+(1491010, 'Tineretului', 'TBD XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX', 'Fondat&#259; &#238;n 1952, cunoscut&#259; &#238;ncep&#226;nd cu 1971 sub numele Editura Albatros, editura Tineretului a publicat în general, dup&#259; cum arat&#259; &#351;i numele, literatur&#259; pentru copii &#537;i tineret. Avea mai multe colec&#355;ii, dintre care se pot remarca, Cutez&#259;torii, Romane de ieri &#537;i de azi, Oameni de seam&#259;, Colec&#355;ia Aventura.'),
+(1491011, 'Eminescu', 'TBD           BUCURESTI-                    X', 'Editura Eminescu a fost creat&#259; în 1969 ca institu&#355;ie de interes na&#355;ional, purtând numele marelui port român Mihai Eminescu. De-a lungul celor patru decenii de existen&#355;&#259;, pe m&#259;sur&#259; ce &#351;i-a diversificat sistemul editorial, Editura Eminescu &#351;i-a men&#355;inut &#351;i adâncit profilul s&#259;u ini&#355;ial, cel de promovare al literaturii române&#351;ti contemporane, ca o form&#259; concret&#259; de reflectare a creativit&#259;&#355;ii române&#351;ti. De asemenea, editura s-a concentrat în publicarea unor lucr&#259;ri de necesitate pentru diverse categorii de cititori.\r\n');
+
+--
+-- Indexes for table `tbl_editors`
+--
+ALTER TABLE `tbl_editors`
+  ADD PRIMARY KEY (`EDITOR_ID`),
+  ADD UNIQUE KEY `EDITOR_NAME_IDX` (`EDITOR_NAME`);
+
+--
+-- AUTO_INCREMENT for table `tbl_editors`
+--
+ALTER TABLE `tbl_editors`
+  MODIFY `EDITOR_ID` int(11) NOT NULL AUTO_INCREMENT COMMENT 'identificator unic al unei edituri', AUTO_INCREMENT=1491012;
+COMMIT;
+
+
