@@ -1,0 +1,45 @@
+ALTER TABLE TBL_BOOKS DROP INDEX BOOK_ID_UNIQUE;
+
+DROP TABLE TBL_BOOKS;
+
+CREATE TABLE `TBL_BOOKS` (`VOLUME_ID` int(10) unsigned NOT NULL AUTO_INCREMENT COMMENT 'Identificator Unic Carte',
+  `AUTHOR_ID` int(10) unsigned NOT NULL COMMENT 'numarul unic de identificare al autorului',
+  `GENRE_ID` int(11) NOT NULL COMMENT 'identificator unic al genului in care se incadreaza volumul',
+  `LAUNCHED_BY` int(11) NOT NULL COMMENT 'identificatorul unic al editurii care a publicat cartea',
+  `LAUNCH_YEAR` int(11) NOT NULL COMMENT 'Anul publicarii cartii',
+  `ISBN` varchar(32) DEFAULT 'Not Available' COMMENT 'Codul ISBN sub care a fost publicata',
+  `VOL_TITLE` varchar(64) DEFAULT 'MORTULDINTRASURAGOALA' COMMENT 'Titlul sub care a fost publicata cartea',
+  `VOL_INFO` text NOT NULL COMMENT 'scurt comentariu introspectiv asupra cartii',
+  PRIMARY KEY (`VOLUME_ID`),
+  UNIQUE KEY `BOOK_ID_UNIQUE` (`VOLUME_ID`),
+  KEY `AUTHOR_FKEY_IDX` (`AUTHOR_ID`),
+  KEY `EDITOR_FKEY_IDX` (`LAUNCHED_BY`),
+  CONSTRAINT `AUTHOR_FKEY` FOREIGN KEY (`AUTHOR_ID`) REFERENCES `TBL_AUTHORS` (`PERS_ID`),
+  CONSTRAINT `EDITOR_FKEY` FOREIGN KEY (`LAUNCHED_BY`) REFERENCES `TBL_EDITORS` (`EDITOR_ID`)
+) ENGINE=InnoDB AUTO_INCREMENT=1817009 DEFAULT CHARSET=utf8 COMMENT='Cartile/Volumele cu principalele atribute';
+
+
+CREATE TABLE `TBL_BOOKS` (`VOLUME_ID` int(10) unsigned NOT NULL AUTO_INCREMENT COMMENT 'Identificator Unic Carte',
+  `AUTHOR_ID` int(10) unsigned NOT NULL COMMENT 'numarul unic de identificare al autorului',
+  `GENRE_ID` int(11) NOT NULL COMMENT 'identificator unic al genului in care se incadreaza volumul',
+  `LAUNCHED_BY` int(11) NOT NULL COMMENT 'identificatorul unic al editurii care a publicat cartea',
+  `LAUNCH_YEAR` int(11) NOT NULL COMMENT 'Anul publicarii cartii',
+  `ISBN` varchar(32) DEFAULT 'Not Available' COMMENT 'Codul ISBN sub care a fost publicata',
+  `VOL_TITLE` varchar(64) DEFAULT 'MORTULDINTRASURAGOALA' COMMENT 'Titlul sub care a fost publicata cartea',
+  `VOL_INFO` text NOT NULL COMMENT 'scurt comentariu introspectiv asupra cartii',
+  PRIMARY KEY (`VOLUME_ID`),
+  UNIQUE KEY `BOOK_ID_UNIQUE` (`VOLUME_ID`),
+  KEY `AUTHOR_FKEY_IDX` (`AUTHOR_ID`),
+  KEY `EDITOR_FKEY_IDX` (`LAUNCHED_BY`),
+  KEY `GENRE_FKEY_IDX` (`GENRE_ID`),
+  CONSTRAINT `AUTHOR_FKEY` FOREIGN KEY (`AUTHOR_ID`) REFERENCES `TBL_AUTHORS` (`PERS_ID`),
+  CONSTRAINT `EDITOR_FKEY` FOREIGN KEY (`LAUNCHED_BY`) REFERENCES `TBL_EDITORS` (`EDITOR_ID`),
+  CONSTRAINT `GENRE_FKEY` FOREIGN KEY (`GENRE_ID`) REFERENCES `TBL_GENRES` (`GENRE_ID`)
+) ENGINE=InnoDB AUTO_INCREMENT=1817009 DEFAULT CHARSET=utf8 COMMENT='Cartile/Volumele cu principalele atribute';
+
+
+INSERT INTO `TBL_BOOKS` (`VOLUME_ID`, `AUTHOR_ID`, `GENRE_ID`, `LAUNCHED_BY`, `LAUNCH_YEAR`, `ISBN`, `VOL_TITLE`, `VOL_INFO`) VALUES (1117001, 1817001, 1489101, 1491001, 2012, '978-606-600-900-3', 'Aurul Spartanilor', 'În anul 1800, traversând cu armata Alpii Apenini, Napoleon descopera întâmplator o comoara pierduta în razboaiele greco-persane. Neputând sa o transporte, îi marcheaza locul pe o harta cifrata, alcatuita pe etichetele a douasprezece sticle de vin rar. Odata cu moartea sa, comoara dispare iarasi. Pâna în zilele noastre, când sotii Sam si Remy Fargo, vânatori de comori, gasesc în mlastinile din Maryland un submarin german din al Doilea Razboi Mondial. Înauntru - surpriza! - o sticla de vin din colectia lui însusi Napoleon. Fascinati, cei doi se decid sa caute si celelalte sticle din serie. Dar nu sunt singurii pe urmele comorii. Hadeon Bondaruk, un milionar jumatate rus, jumatate persan, vrea tezaurul cu orice pret.');
+INSERT INTO `TBL_BOOKS` (`VOLUME_ID`, `AUTHOR_ID`, `GENRE_ID`, `LAUNCHED_BY`, `LAUNCH_YEAR`, `ISBN`, `VOL_TITLE`, `VOL_INFO`) (1117002, 1817002, 1489105, 1491002, 1949, '2070367754', 'Week-End la Zuydcoote', 'Weekend la Zuydcoote este primul roman al lui Robert Merle, publicat în 1949 de editura Gallimard. El a primit premiul Goncourt în acelasi an, cel mai presitigios premiu literar francez. Actiunea îl vizeaza pe Julien Maillat, soldat francez care încearca cu disperare sa se alature armatei britanice de pe flotila Marinei Regale, în 1940, în timpul retragerii aliatilor din Franta ocupata de armatele lui Hitler');
+INSERT INTO `TBL_BOOKS` (`VOLUME_ID`, `AUTHOR_ID`, `GENRE_ID`, `LAUNCHED_BY`, `LAUNCH_YEAR`, `ISBN`, `VOL_TITLE`, `VOL_INFO`) (1117003, 1817003, 1489102, 1491003, 1974, 'N-AV-1117003', 'Monte Cassino', 'Monte Cassino, un nume, o manastire aproape uitata undeva, la sud de Roma? Nu, un iad; atât de neînchipuit încât omul cu imaginatia cea mai bogata nu i-ar putea zugravi grozavia. Un loc în care mortii mor de câte cinci ori. Un tinut al foamei, al setei si al mortii. Un cimitir pentru tinerii între 20 si 30 de ani. Iubite cititorule, daca într-o frumoasa zi de vacanta treci cumva prin orasul Cassino, opreste-te o clipa atunci când vei ajunge la drumul care duce la manastire. Coboara din masina, pleaca-ti capul în semn de respect pentru cei care au cazut aici, pe muntele sfânt. Asculta cu atentie, poate vei mai auzi vuietul obuzelor si vaietele ranitilor');
+INSERT INTO `TBL_BOOKS` (`VOLUME_ID`, `AUTHOR_ID`, `GENRE_ID`, `LAUNCHED_BY`, `LAUNCH_YEAR`, `ISBN`, `VOL_TITLE`, `VOL_INFO`) (1117004, 1817005, 1489105, 1491003, 1974, 'N-AV-1117004', 'Au fost saisprezece', 'Englezii si nemtii se bateau pe viata si pe moarte în mijlocul flacarilor, pe nisipul rascolit si stropit de sânge. De doua ori Rockway incerca sa treaca; prima oara fu îmbrâncit brutal, a doua oara o lovitura cu patul pustii îi taie rasuflarea. Cazu în genunchi, comprimându-si burta cu mâinile. Un commando ranit se sinucise facând sa explodeze o Gammon în mijlocul încaierarii. Era Williamson. Vârtejuri cumplite de flacari împroscara noaptea, facând vid în jurul lor. Rockway se napusti în haosul de racnete si corpuri. Traversa un zid de foc si goni spre cele doua corturi ale generatoarelor. O rafala îl facu sa se dea de-a berbeleacul. Se ridica dintr-o saritura, fara sa-i pese de sângele care pornise sa tâsneasca din umarul drept. În fata ochilor avea usa întredeschisa a cortului. Un bec vopsit în albastru lumina puternicul motor si siluetele celor ce sa bateau inauntru. Rockway sovai o clipa, apoi apuca o grenada cu mâna stânga si-i smulse cuisorul de siguranta cu dintii. Ea exploda in zbor, carbonizând laolalta motor, cort, germani si britanici. Exploda si cisterna, într-o uriasa ciuperca purpurie. Locotenentul goni mai departe...');
+INSERT INTO `TBL_BOOKS` (`VOLUME_ID`, `AUTHOR_ID`, `GENRE_ID`, `LAUNCHED_BY`, `LAUNCH_YEAR`, `ISBN`, `VOL_TITLE`, `VOL_INFO`) (1117005, 1817004, 1489105, 1491003, 1970, 'N-AV-1117005', 'Dinamita Cocteil', 'Indiferent de meridianul pe care se petrece actiunea cartilor din aceasta serie, indiferent de întâmplarile pe care le înfrunta eroii lor, fiecare îi comunica cititorului, în succesiunea palpitanta a faptelor, experienta dramatica  a aventurii traite, tensiunea cautarii, a înfrângerii de moment si a izbânzii finale, ce pecetluieste suprematia binelui');
