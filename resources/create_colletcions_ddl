@@ -1,0 +1,85 @@
+-- phpMyAdmin SQL Dump
+-- version 4.9.7
+-- https://www.phpmyadmin.net/
+--
+-- Host: localhost:3306
+-- Generation Time: Apr 16, 2022 at 08:27 PM
+-- Server version: 10.0.38-MariaDB
+-- PHP Version: 7.4.28
+
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET AUTOCOMMIT = 0;
+START TRANSACTION;
+SET time_zone = "+00:00";
+
+DROP TABLE `tbl_collections` IF EXISTS;
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8mb4 */;
+
+--
+-- Database: `dcatalin_warehouse`
+--
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `tbl_collections`
+--
+
+CREATE TABLE `tbl_collections` (
+  `collection_id` int(11) UNSIGNED NOT NULL COMMENT 'Collection identification number starts with 1323001',
+  `collection_name` varchar(45) NOT NULL DEFAULT 'Antologia' COMMENT 'the name of a collection uniquely identifies that list of books',
+  `collection_publ` int(11) NOT NULL DEFAULT '1491001' COMMENT 'Foreign key binding the collection to a particular publisher ID',
+  `collection_year` int(11) DEFAULT '1900' COMMENT 'the publication year of the first book belonging to the collection',
+  `collection_info` text NOT NULL COMMENT 'Short description of the things that make the targeted collection to be a literature asset'
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='a list of books usually published by the same editor, during several years, from different authors ';
+
+--
+-- Dumping data for table `tbl_collections`
+--
+
+INSERT INTO `tbl_collections` (`collection_id`, `collection_name`, `collection_publ`, `collection_year`, `collection_info`) VALUES
+(1323000, 'NoName', 1491000, 2999, 'Empty Field for filling out unknown collection situation'),
+(1323001, 'Delfinul', 1491003, 1970, 'TBD XXXXXXXXXXXXX'),
+(1323002, 'Enigma', 1491006, 1971, '&#206;ncep&#226;nd cu anul 1969, Editura Univers a lansat sub numele &#8222;Enigma&#8221; o serie de romane poli&#355;iste avand autori at&#226;t romani, c&#226;t &#351;i str&#259;ini. Colectia nu a fost numerotata, iar prima carte publicata a fost romanul Bruta scris de Guy des Cars. Primele volume au fost editate de Editura pentru Literatura, editura peste a carui schelet s-a format Editura Univers.'),
+(1323003, 'Aventura (2)', 1491008, 1969, 'Colec&#355;ia Aventura publicat&#259; de Editura Albatros dup&#259; anul 1971...'),
+(1323004, 'Aventura (1)', 1491010, 1965, 'TBD-Colec&#355;ia Aventura, ini&#355;iat&#259; de editura Tineretului...'),
+(1323005, 'Sfinx', 1491002, 1975, 'TBD XXXXXXXXXXXXX'),
+(1323006, 'Clepsidra', 1491011, 1978, 'TBD STILL LOOKING FOR INFORMATION X');
+
+--
+-- Indexes for table `tbl_collections`
+--
+ALTER TABLE `tbl_collections`
+  ADD PRIMARY KEY (`collection_id`),
+  ADD UNIQUE KEY `COLLECT_IDX` (`collection_id`),
+  ADD KEY `PUBLISHER_FKEY` (`collection_publ`);
+
+--
+-- AUTO_INCREMENT for dumped tables
+--
+
+--
+-- AUTO_INCREMENT for table `tbl_collections`
+--
+ALTER TABLE `tbl_collections`
+  MODIFY `collection_id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT COMMENT 'Collection identification number starts with 1323001', AUTO_INCREMENT=1323007;
+
+--
+-- Constraints for dumped tables
+--
+
+--
+-- Constraints for table `tbl_collections`
+--
+ALTER TABLE `tbl_collections`
+  ADD CONSTRAINT `PUBL_CNSTR` FOREIGN KEY (`collection_publ`) REFERENCES `tbl_editors` (`EDITOR_ID`) ON DELETE CASCADE;
+COMMIT;
+
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+
