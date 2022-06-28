@@ -13,7 +13,7 @@
 
 	<link type="text/css"
 		  rel="stylesheet"
-		  href="${pageContext.request.contextPath}/resources/css/author.css">
+		  href="${pageContext.request.contextPath}/resources/css/style.css">
 </head>
 
 <body>
@@ -27,7 +27,7 @@
 	<div id="container">
 		<h3>Save Genre</h3>
 	
-		<form:form action="sav_novel_type" modelAttribute="new_novel_type" method="POST">
+		<form:form action="savNovelType" modelAttribute="new_novel_type" method="POST">
 <!-- need to associate this data with customer id -->
 			<form:hidden path="genreID" />
 			<table>

@@ -5,36 +5,49 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Author: ${old_author.authorName}</title>
+<title>Author Details</title>
 	<!-- reference our style sheet -->
 	<link type="text/css"
 		  rel="stylesheet"
-		  href="${pageContext.request.contextPath}/resources/css/author.css" /></head>
+		  href="${pageContext.request.contextPath}/resources/css/style.css" /></head>
 </head>
 <body>
 	<div id="wrapper">
 		<div id="header">
-			<h2>${old_author.authorName}</h2>
+			<h2>Author: ${author.authorName}</h2>
 		</div>
 	</div>
 
 	<div id="container">
 		<div id="content">
-			<table>
+			<table border="0">
 				<tr>
 					<td>Author's Name:&nbsp;</td>
-					<td>${old_author.authorName}</td>
+					<td>${author.authorName}</td>
 				</tr>
 				<tr>
 					<td>Born In:&nbsp;</td>
-					<td>${old_author.authorBirthYear}</td>
+					<td>${author.authorBirthYear}&nbsp;</td>
+				</tr>
+
+				<tr>
+					<td colspan="3">
+						<table border="1" width="100%">
+							<tr>
+							  <td width="10%">&nbsp;</td>
+							  <td>${author.authorBiography}</td>
+							</tr>
+						</table>
+					
+					</td>
 				</tr>
 				<tr>
-					<td colspan="2">${old_author.authorBiography}</td>
+					<td>&nbsp;</td>
+					<td colspan="2">Back to&nbsp;<a href="${pageContext.request.contextPath}/lib/listAuthors">List</a></td>
 				</tr>
 			</table>
 		</div>
 	</div>
-<!--  Version 1.1.3 of the Book Tracker -->
+<!--  Version 1.6.1 of the Book Tracker -->
 </body>
 </html>

@@ -13,7 +13,7 @@
 
 	<link type="text/css"
 		  rel="stylesheet"
-		  href="${pageContext.request.contextPath}/resources/css/author.css">
+		  href="${pageContext.request.contextPath}/resources/css/style.css">
 </head>
 
 <body>
@@ -27,7 +27,7 @@
 	<div id="container">
 		<h3>Save/Edit Author</h3>
 	
-		<form:form action="sav_author" modelAttribute="new_author" method="POST">
+		<form:form action="savAuthor" modelAttribute="new_author" method="POST">
 <!-- need to associate this data with author id -->
 			<form:hidden path="authorID" />
 			<table>
@@ -67,5 +67,5 @@
 	</div>
 
 </body>
-<!--  Version 1.1.3 of the Book Tracker -->
+<!--  Version 1.5.1 of the Book Tracker -->
 </html>

@@ -5,7 +5,7 @@
 <html>
 
 <head>
-	<title>Save Author Form</title>
+	<title>Save Editor Form</title>
 
 	<link type="text/css"
 		  rel="stylesheet"
@@ -13,7 +13,7 @@
 
 	<link type="text/css"
 		  rel="stylesheet"
-		  href="${pageContext.request.contextPath}/resources/css/author.css">
+		  href="${pageContext.request.contextPath}/resources/css/style.css">
 </head>
 
 <body>
@@ -64,7 +64,6 @@
 			<a href="${pageContext.request.contextPath}/lib/listEditors">Back to List</a>
 		</p>
 	</div>
-
 </body>
-<!--  Version 1.2.7 of the Book Tracker -->
+<!--  Version 1.5.1 of the Book Tracker -->
 </html>

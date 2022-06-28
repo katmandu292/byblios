@@ -9,11 +9,11 @@
 
 	<link type="text/css"
 		  rel="stylesheet"
-		  href="${pageContext.request.contextPath}/resources/css/add_author.css">
+		  href="${pageContext.request.contextPath}/resources/css/add-customer-style.css">
 
 	<link type="text/css"
 		  rel="stylesheet"
-		  href="${pageContext.request.contextPath}/resources/css/author.css">
+		  href="${pageContext.request.contextPath}/resources/css/style.css">
 </head>
 
 <body>
@@ -27,7 +27,7 @@
 	<div id="container">
 		<h3>Update/Define Book</h3>
 	
-		<form:form action="savBook" modelAttribute="new_book" method="POST">
+		<form:form action="savBook" modelAttribute="newBook" method="POST">
 <!-- need to associate this data with book id -->
 			<form:hidden path="bookID" />
 			<table>
@@ -70,16 +70,14 @@
 							</form:select>
 						</td>
 					</tr>
-
 					<tr>
 						<td><label>Collection:&nbsp;</label></td>
-						<td><form:select path="theCollection">
+						<td><form:select path="bookSeries">
 							<form:options items="${collection}" />
 							<form:options items="${bookCollections}" />
 							</form:select>
 						</td>
 					</tr>
-
 					<tr>
 						<td><label>Info:&nbsp;</label></td>
 						<td><form:textarea path="bookInfo" rows="25" cols="64" /></td>
@@ -92,13 +90,13 @@
 				</tbody>
 			</table>
 		</form:form>
-	
-	<div style="clear; both;"></div>
-		<p>
-			<a href="${pageContext.request.contextPath}/lib/listBooks">Back to List</a>
-		</p>
+	</div>	
+
+	<div id="container">
+		<a href="${pageContext.request.contextPath}/book/listBooks">Back to List</a>
 	</div>
 
+
 </body>
-<!--  Version 1.2.9 of the Book Tracker -->
+<!--  Version 1.5.1 of the Book Tracker -->
 </html>

@@ -1,6 +1,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -9,7 +10,7 @@
 	<!-- reference our style sheet -->
 	<link type="text/css"
 		  rel="stylesheet"
-		  href="${pageContext.request.contextPath}/resources/css/author.css" /></head>
+		  href="${pageContext.request.contextPath}/resources/css/style.css" /></head>
 
 <body>
 	<div id="wrapper">
@@ -37,7 +38,7 @@
 <!-- loop over and print our authors -->
 				<c:forEach var="tmpBookColl" items="${bookColls}">
 <!-- construct an "update" link with author identifier -->
-					<c:url var="collectionUpdateLink" value="/lib/updateCollection">
+					<c:url var="collectionUpdateLink" value="/book/updateCollection">
 						<c:param name="bookSeriesId" value="${tmpBookColl.collectionId}" />
 					</c:url>
 <!-- construct a "delete" link with author identifier -->
@@ -57,7 +58,12 @@
 					</tr>
 				</c:forEach>
 			</table>
-
+		</div>
+		<div id="container">
+			<form:form action="${pageContext.request.contextPath}/logout" 
+			   method="POST">
+			<input type="submit" value="Logout" class="add-button" />
+			</form:form>
 		</div>
 	</div>
 

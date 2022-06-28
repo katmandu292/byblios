@@ -9,11 +9,11 @@
 
 	<link type="text/css"
 		  rel="stylesheet"
-		  href="${pageContext.request.contextPath}/resources/css/add_author.css">
+		  href="${pageContext.request.contextPath}/resources/css/add-customer-style.css">
 
 	<link type="text/css"
 		  rel="stylesheet"
-		  href="${pageContext.request.contextPath}/resources/css/author.css">
+		  href="${pageContext.request.contextPath}/resources/css/style.css">
 </head>
 
 <body>
@@ -27,7 +27,7 @@
 	<div id="container">
 		<h3>Update/Define Book Collection</h3>
 
-		<form:form action="savBookCollection" modelAttribute="bookColls" method="GET">
+		<form:form action="savBookCollection" modelAttribute="bookColls" method="POST">
 <!-- need to associate this data with book id -->
 			<form:hidden path="collectionId" />
 			<table>
@@ -66,10 +66,10 @@
 	
 	<div style="clear; both;"></div>
 		<p>
-			<a href="${pageContext.request.contextPath}/lib/listCollections">Back to List</a>
+			<a href="${pageContext.request.contextPath}/book/listCollections">Back to List</a>
 		</p>
 	</div>
 
 </body>
-<!--  Version 1.2.9 of the Book Tracker -->
+<!--  Version 1.5.1 of the Book Tracker -->
 </html>
